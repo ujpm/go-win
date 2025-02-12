@@ -15,11 +15,26 @@ import {
   FiFileText,
   FiDatabase,
   FiLayers,
-  FiShield
+  FiShield,
+  FiX
 } from 'react-icons/fi';
+import { IconType } from 'react-icons';
 
-const getMenuItems = (isAdmin: boolean, handleProtectedLink: (path: string) => void) => {
-  const baseItems = [
+interface SidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+interface MenuItem {
+  icon: IconType;
+  name: string;
+  path: string;
+  protected?: boolean;
+  adminOnly?: boolean;
+}
+
+const getMenuItems = (isAdmin: boolean): MenuItem[] => {
+  const baseItems: MenuItem[] = [
     { icon: FiHome, name: 'Home', path: '/' },
     { icon: FiInfo, name: 'About', path: '/about' },
     { icon: FiBookOpen, name: 'Learn', path: '/learn', protected: true },
@@ -29,13 +44,13 @@ const getMenuItems = (isAdmin: boolean, handleProtectedLink: (path: string) => v
     { icon: FiBarChart2, name: 'Progress', path: '/progress', protected: true },
   ];
 
-  const adminItems = [
+  const adminItems: MenuItem[] = [
     { icon: FiShield, name: 'Admin Dashboard', path: '/admin', adminOnly: true },
     { icon: FiLayers, name: 'Manage Courses', path: '/admin/courses', adminOnly: true },
     { icon: FiDatabase, name: 'Manage Resources', path: '/admin/resources', adminOnly: true },
   ];
 
-  const userItems = [
+  const userItems: MenuItem[] = [
     { icon: FiUser, name: 'Profile', path: '/profile', protected: true },
     { icon: FiHelpCircle, name: 'Help', path: '/help' },
     { icon: FiSettings, name: 'Settings', path: '/settings', protected: true },
@@ -48,30 +63,40 @@ const getMenuItems = (isAdmin: boolean, handleProtectedLink: (path: string) => v
   ];
 };
 
-export const Sidebar = () => {
+export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { user, isAdmin } = useAuth();
 
   const handleProtectedLink = (path: string) => {
     if (!user) {
-      // You might want to handle this differently, maybe show a login modal
       navigate('/login');
       return;
     }
     navigate(path);
+    onClose();
   };
 
-  const menuItems = getMenuItems(isAdmin || false, handleProtectedLink);
+  const menuItems = getMenuItems(isAdmin || false);
+
+  const sidebarClasses = `fixed top-0 h-full bg-white shadow-lg z-50 transition-all duration-300
+    ${isOpen ? 'left-0 w-[240px]' : '-left-[240px] lg:left-0 lg:w-[72px]'} lg:hover:w-[240px]`;
 
   return (
-    <div className="fixed left-0 top-0 h-full w-[72px] bg-white shadow-lg hover:w-[240px] transition-all duration-300 group z-50">
+    <div className={sidebarClasses}>
+      {/* Mobile close button */}
+      <button
+        onClick={onClose}
+        className="lg:hidden absolute right-4 top-4 p-2 text-gray-500 hover:text-gray-700"
+      >
+        <FiX className="w-6 h-6" />
+      </button>
+
       <div className="flex flex-col h-full py-6">
-        <nav className="flex-1 space-y-2 px-3">
+        <nav className="flex-1 space-y-2 px-3 mt-8">
           {menuItems.map((item) => {
             const isActive = location.pathname === item.path;
             
-            // Skip admin items if user is not admin
             if (item.adminOnly && !isAdmin) {
               return null;
             }
@@ -84,6 +109,8 @@ export const Sidebar = () => {
                   if (item.protected) {
                     e.preventDefault();
                     handleProtectedLink(item.path);
+                  } else {
+                    onClose();
                   }
                 }}
                 className={`flex items-center h-12 overflow-hidden rounded-lg transition-all duration-200 
@@ -99,7 +126,8 @@ export const Sidebar = () => {
                 >
                   <item.icon className="w-5 h-5" />
                 </motion.div>
-                <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className={`whitespace-nowrap transition-opacity duration-300
+                  ${isOpen ? 'opacity-100' : 'opacity-0 lg:group-hover:opacity-100'}`}>
                   {item.name}
                 </span>
               </Link>
