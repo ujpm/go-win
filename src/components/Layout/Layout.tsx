@@ -3,7 +3,7 @@ import { Sidebar } from './Sidebar';
 import { Topbar } from './Topbar';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FiGlobe } from 'react-icons/fi';
-import { Footer } from './Footer';
+import Footer from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;

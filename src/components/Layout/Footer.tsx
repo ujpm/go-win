@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiGithub, FiTwitter, FiLinkedin, FiMail } from 'react-icons/fi';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { theme } from '../../config/theme';
 
-export const Footer: React.FC = () => {
+const Footer: React.FC = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
@@ -14,7 +13,10 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <img src="/logo.png" alt="Logo" className="h-8 brightness-0 invert" />
+            <div className="flex items-center space-x-2">
+              <img src="/logo.png" alt="Logo" className="h-8 brightness-0 invert" />
+              <span className="text-white font-bold text-xl">Tsinda.pro</span>
+            </div>
             <p className="text-sm text-gray-300">
               {t('comprehensiveLearningPlatform')}
             </p>
@@ -126,3 +128,5 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+
+export default Footer;
