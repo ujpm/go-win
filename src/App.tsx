@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from '@/hooks/useAuth';
-import { Navbar } from '@/components/Layout/Navbar';
 import { Home } from '@/components/home/Home';
 import { CourseList } from '@/components/courses/CourseList';
 import { CourseViewer } from '@/components/courses/CourseViewer';

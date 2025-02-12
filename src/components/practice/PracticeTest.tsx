@@ -1,238 +1,214 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiArrowLeft, FiRefreshCw } from 'react-icons/fi';
+import { FiArrowRight, FiArrowLeft, FiCheck, FiX } from 'react-icons/fi';
 import questionsData from '../../questions.json';
 
 interface Question {
   id: number;
   question: string;
-  answer: string;
-  options?: string[];
+  options: string[];
+  correctAnswer: number;
+  explanation: string;
 }
 
-interface UserAnswer {
-  questionId: number;
-  selectedAnswer: string;
-  isCorrect: boolean;
+interface TestState {
+  currentPage: number;
+  answers: { [key: number]: number };
+  submitted: boolean;
 }
+
+const QUESTIONS_PER_PAGE = 5;
 
 const PracticeTest: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [selectedQuestions, setSelectedQuestions] = useState<Question[]>([]);
-  const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
-  const [showResults, setShowResults] = useState(false);
-  const [score, setScore] = useState(0);
-
-  const questionsPerPage = 5;
-  const totalQuestions = 15;
-
-  // Generate options for a question
-  const generateOptions = (correctAnswer: string): string[] => {
-    const allAnswers = questionsData.map(q => q.answer);
-    const options = new Set<string>([correctAnswer]);
-    
-    while (options.size < 4) {
-      const randomAnswer = allAnswers[Math.floor(Math.random() * allAnswers.length)];
-      options.add(randomAnswer);
-    }
-    
-    return Array.from(options).sort(() => Math.random() - 0.5);
-  };
-
-  // Initialize or reset the test
-  const initializeTest = () => {
-    const shuffled = [...questionsData].sort(() => Math.random() - 0.5);
-    const selected = shuffled.slice(0, totalQuestions).map(q => ({
-      ...q,
-      options: generateOptions(q.answer)
-    }));
-    setSelectedQuestions(selected);
-    setUserAnswers([]);
-    setShowResults(false);
-    setScore(0);
-    setCurrentPage(0);
-  };
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [testState, setTestState] = useState<TestState>({
+    currentPage: 0,
+    answers: {},
+    submitted: false
+  });
 
   useEffect(() => {
-    initializeTest();
+    // Randomly select 15 questions
+    const allQuestions = questionsData.questions as Question[];
+    const shuffledQuestions = allQuestions
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 15);
+    setQuestions(shuffledQuestions);
   }, []);
 
-  const handleAnswerSelect = (questionId: number, selectedAnswer: string, correctAnswer: string) => {
-    const isCorrect = selectedAnswer === correctAnswer;
-    setUserAnswers(prev => [
-      ...prev.filter(a => a.questionId !== questionId),
-      { questionId, selectedAnswer, isCorrect }
-    ]);
+  const handleAnswer = (questionId: number, answerIndex: number) => {
+    if (testState.submitted) return;
+
+    setTestState(prev => ({
+      ...prev,
+      answers: {
+        ...prev.answers,
+        [questionId]: answerIndex
+      }
+    }));
   };
 
   const handleSubmit = () => {
-    const correctAnswers = userAnswers.filter(a => a.isCorrect).length;
-    setScore((correctAnswers / totalQuestions) * 100);
-    setShowResults(true);
+    setTestState(prev => ({
+      ...prev,
+      submitted: true
+    }));
   };
 
-  const getCurrentPageQuestions = () => {
-    const start = currentPage * questionsPerPage;
-    return selectedQuestions.slice(start, start + questionsPerPage);
+  const handleRetake = () => {
+    // Shuffle questions again
+    const allQuestions = questionsData.questions as Question[];
+    const shuffledQuestions = allQuestions
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 15);
+    setQuestions(shuffledQuestions);
+    
+    // Reset test state
+    setTestState({
+      currentPage: 0,
+      answers: {},
+      submitted: false
+    });
   };
 
-  const getAnswerStyle = (questionId: number, option: string) => {
-    if (!showResults) {
-      const isSelected = userAnswers.find(
-        a => a.questionId === questionId && a.selectedAnswer === option
-      );
-      return isSelected ? 'bg-secondary/20' : '';
-    }
-
-    const question = selectedQuestions.find(q => q.id === questionId);
-    const userAnswer = userAnswers.find(a => a.questionId === questionId);
-
-    if (option === question?.answer) {
-      return 'bg-green-100 text-green-800 border-green-300';
-    }
-    if (userAnswer?.selectedAnswer === option && !userAnswer.isCorrect) {
-      return 'bg-red-100 text-red-800 border-red-300';
-    }
-    return 'opacity-50';
+  const calculateScore = () => {
+    let correct = 0;
+    questions.forEach(q => {
+      if (testState.answers[q.id] === q.correctAnswer) {
+        correct++;
+      }
+    });
+    return correct;
   };
 
-  if (selectedQuestions.length === 0) {
-    return <div className="flex justify-center items-center h-96">Loading...</div>;
+  const currentQuestions = questions.slice(
+    testState.currentPage * QUESTIONS_PER_PAGE,
+    (testState.currentPage + 1) * QUESTIONS_PER_PAGE
+  );
+
+  const totalPages = Math.ceil(questions.length / QUESTIONS_PER_PAGE);
+
+  if (questions.length === 0) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-secondary mx-auto"></div>
+          <p className="mt-4 text-muted-foreground">Loading questions...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      {!showResults ? (
-        <>
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-accent mb-4">
-              Practice Test - Page {currentPage + 1} of {Math.ceil(totalQuestions / questionsPerPage)}
-            </h2>
-            <div className="h-2 bg-gray-200 rounded-full">
-              <div
-                className="h-2 bg-secondary rounded-full transition-all duration-300"
-                style={{ width: `${((currentPage * questionsPerPage + getCurrentPageQuestions().length) / totalQuestions) * 100}%` }}
-              />
-            </div>
-          </div>
+    <div className="max-w-3xl mx-auto py-8 px-4">
+      <div className="bg-white rounded-lg shadow-lg p-6">
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold text-accent mb-2">Practice Test</h2>
+          <p className="text-muted-foreground">
+            Page {testState.currentPage + 1} of {totalPages}
+          </p>
+        </div>
 
-          <div className="space-y-8">
-            {getCurrentPageQuestions().map((question, index) => (
-              <motion.div
-                key={question.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-lg p-6"
-              >
-                <h3 className="text-lg font-semibold text-accent mb-4">
-                  {currentPage * questionsPerPage + index + 1}. {question.question}
-                </h3>
-                <div className="space-y-3">
-                  {question.options?.map((option, optionIndex) => (
-                    <button
-                      key={optionIndex}
-                      onClick={() => handleAnswerSelect(question.id, option, question.answer)}
-                      className={`w-full text-left p-4 rounded-lg border transition-all duration-200
-                        ${getAnswerStyle(question.id, option)}
-                        hover:bg-secondary/10`}
-                    >
-                      {option}
-                    </button>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-8 flex justify-between items-center">
-            <button
-              onClick={() => setCurrentPage(prev => prev - 1)}
-              disabled={currentPage === 0}
-              className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-secondary text-white disabled:opacity-50"
+        <div className="space-y-8">
+          {currentQuestions.map((q, idx) => (
+            <motion.div
+              key={q.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              className="border rounded-lg p-4"
             >
-              <FiArrowLeft />
-              <span>Previous</span>
-            </button>
-
-            {currentPage === Math.ceil(totalQuestions / questionsPerPage) - 1 ? (
-              <button
-                onClick={handleSubmit}
-                disabled={userAnswers.length < totalQuestions}
-                className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-secondary text-white disabled:opacity-50"
-              >
-                <span>Submit Test</span>
-                <FiArrowRight />
-              </button>
-            ) : (
-              <button
-                onClick={() => setCurrentPage(prev => prev + 1)}
-                className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-secondary text-white"
-              >
-                <span>Next</span>
-                <FiArrowRight />
-              </button>
-            )}
-          </div>
-        </>
-      ) : (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="bg-white rounded-lg shadow-lg p-8"
-        >
-          <h2 className="text-2xl font-bold text-accent mb-4">Test Results</h2>
-          <div className="mb-8">
-            <div className="text-4xl font-bold text-center mb-2">
-              {score.toFixed(1)}%
-            </div>
-            <div className="h-4 bg-gray-200 rounded-full">
-              <div
-                className="h-4 bg-secondary rounded-full transition-all duration-1000"
-                style={{ width: `${score}%` }}
-              />
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            {selectedQuestions.map((question, index) => {
-              const userAnswer = userAnswers.find(a => a.questionId === question.id);
-              return (
-                <div
-                  key={question.id}
-                  className={`p-4 rounded-lg border ${
-                    userAnswer?.isCorrect
-                      ? 'border-green-300 bg-green-50'
-                      : 'border-red-300 bg-red-50'
-                  }`}
-                >
-                  <div className="font-semibold mb-2">
-                    {index + 1}. {question.question}
-                  </div>
-                  <div className="text-sm">
-                    <div className="text-green-800">
-                      Correct Answer: {question.answer}
+              <p className="font-medium text-lg mb-4">{q.question}</p>
+              <div className="space-y-2">
+                {q.options.map((option, optionIdx) => (
+                  <button
+                    key={optionIdx}
+                    onClick={() => handleAnswer(q.id, optionIdx)}
+                    className={`w-full text-left p-3 rounded-lg transition-all ${
+                      testState.answers[q.id] === optionIdx
+                        ? 'bg-secondary text-white'
+                        : 'hover:bg-secondary/10'
+                    } ${
+                      testState.submitted
+                        ? optionIdx === q.correctAnswer
+                          ? 'bg-green-500 text-white'
+                          : testState.answers[q.id] === optionIdx
+                          ? 'bg-red-500 text-white'
+                          : ''
+                        : ''
+                    }`}
+                    disabled={testState.submitted}
+                  >
+                    <div className="flex items-center">
+                      <span className="flex-1">{option}</span>
+                      {testState.submitted && optionIdx === q.correctAnswer && (
+                        <FiCheck className="w-5 h-5" />
+                      )}
+                      {testState.submitted && testState.answers[q.id] === optionIdx && optionIdx !== q.correctAnswer && (
+                        <FiX className="w-5 h-5" />
+                      )}
                     </div>
-                    {!userAnswer?.isCorrect && (
-                      <div className="text-red-800">
-                        Your Answer: {userAnswer?.selectedAnswer}
-                      </div>
-                    )}
-                  </div>
+                  </button>
+                ))}
+              </div>
+              {testState.submitted && (
+                <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+                  <p className="font-medium text-accent">Explanation:</p>
+                  <p className="text-muted-foreground">{q.explanation}</p>
                 </div>
-              );
-            })}
-          </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
 
+        <div className="mt-8 flex justify-between">
           <button
-            onClick={initializeTest}
-            className="mt-8 flex items-center space-x-2 px-6 py-3 rounded-lg bg-secondary text-white mx-auto"
+            onClick={() => setTestState(prev => ({ ...prev, currentPage: prev.currentPage - 1 }))}
+            disabled={testState.currentPage === 0}
+            className="px-4 py-2 rounded-lg bg-secondary/10 text-secondary hover:bg-secondary/20 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <FiRefreshCw className="w-5 h-5" />
-            <span>Retake Test</span>
+            <FiArrowLeft className="w-5 h-5" />
           </button>
-        </motion.div>
-      )}
+          
+          {testState.submitted ? (
+            <button
+              onClick={handleRetake}
+              className="px-6 py-2 rounded-lg bg-secondary text-white hover:bg-secondary/90"
+            >
+              Retake Test
+            </button>
+          ) : (
+            <button
+              onClick={handleSubmit}
+              className="px-6 py-2 rounded-lg bg-secondary text-white hover:bg-secondary/90"
+              disabled={Object.keys(testState.answers).length < questions.length}
+            >
+              Submit
+            </button>
+          )}
+          
+          <button
+            onClick={() => setTestState(prev => ({ ...prev, currentPage: prev.currentPage + 1 }))}
+            disabled={testState.currentPage === totalPages - 1}
+            className="px-4 py-2 rounded-lg bg-secondary/10 text-secondary hover:bg-secondary/20 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <FiArrowRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {testState.submitted && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-8 p-6 bg-gray-50 rounded-lg text-center"
+          >
+            <h3 className="text-xl font-bold text-accent mb-2">Test Complete!</h3>
+            <p className="text-lg text-muted-foreground">
+              You scored {calculateScore()} out of {questions.length} questions correctly.
+            </p>
+          </motion.div>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does a red traffic light mean?",
+      "options": [
+        "Stop and wait behind the stop line",
+        "Slow down and proceed with caution",
+        "Speed up to clear the intersection",
+        "Turn right if safe"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A red traffic light means you must stop and wait behind the stop line until the light turns green."
+    },
+    {
+      "id": 2,
+      "question": "What is the national speed limit on a single carriageway?",
+      "options": [
+        "50 mph",
+        "60 mph",
+        "70 mph",
+        "40 mph"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The national speed limit on a single carriageway is 60 mph for cars."
+    },
+    {
+      "id": 3,
+      "question": "When should you use your hazard warning lights?",
+      "options": [
+        "When parking on double yellow lines",
+        "To warn others of a hazard ahead",
+        "When driving slowly in fast traffic",
+        "All of the above"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Hazard warning lights should be used to warn other drivers of a hazard or obstruction ahead."
+    }
+  ]
+}

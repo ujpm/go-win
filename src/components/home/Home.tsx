@@ -86,7 +86,7 @@ export const Home: React.FC = () => {
                 title: 'Progress Tracking',
                 description: 'Monitor your learning progress and identify areas for improvement.'
               }
-            ].map((feature, index) => (
+            ].map((feature) => (
               <motion.div 
                 key={feature.title}
                 whileHover={{ y: -5 }}
