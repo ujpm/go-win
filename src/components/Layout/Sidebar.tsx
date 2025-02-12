@@ -1,85 +1,55 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useAuth } from '@/hooks/useAuth';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { useAuth } from '../../hooks/useAuth';
 import {
   FiHome,
+  FiInfo,
   FiBook,
-  FiAward,
+  FiCheckSquare,
+  FiFolder,
+  FiTrendingUp,
   FiUser,
   FiSettings,
   FiHelpCircle,
-  FiBarChart2,
-  FiInfo,
-  FiBookOpen,
-  FiFileText,
   FiDatabase,
-  FiLayers,
-  FiShield,
+  FiGrid,
   FiX
 } from 'react-icons/fi';
-import { IconType } from 'react-icons';
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-interface MenuItem {
-  icon: IconType;
-  name: string;
-  path: string;
-  protected?: boolean;
-  adminOnly?: boolean;
-}
-
-const getMenuItems = (isAdmin: boolean): MenuItem[] => {
-  const baseItems: MenuItem[] = [
-    { icon: FiHome, name: 'Home', path: '/' },
-    { icon: FiInfo, name: 'About', path: '/about' },
-    { icon: FiBookOpen, name: 'Learn', path: '/learn', protected: true },
-    { icon: FiAward, name: 'Practice Tests', path: '/practice', protected: true },
-    { icon: FiBook, name: 'Courses', path: '/courses', protected: true },
-    { icon: FiFileText, name: 'Resources', path: '/resources', protected: true },
-    { icon: FiBarChart2, name: 'Progress', path: '/progress', protected: true },
-  ];
-
-  const adminItems: MenuItem[] = [
-    { icon: FiShield, name: 'Admin Dashboard', path: '/admin', adminOnly: true },
-    { icon: FiLayers, name: 'Manage Courses', path: '/admin/courses', adminOnly: true },
-    { icon: FiDatabase, name: 'Manage Resources', path: '/admin/resources', adminOnly: true },
-  ];
-
-  const userItems: MenuItem[] = [
-    { icon: FiUser, name: 'Profile', path: '/profile', protected: true },
-    { icon: FiHelpCircle, name: 'Help', path: '/help' },
-    { icon: FiSettings, name: 'Settings', path: '/settings', protected: true },
-  ];
-
-  return [
-    ...baseItems,
-    ...(isAdmin ? adminItems : []),
-    ...userItems
-  ];
-};
-
 export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const location = useLocation();
-  const navigate = useNavigate();
-  const { user, isAdmin } = useAuth();
+  const { isAdmin } = useAuth();
+  const { t } = useLanguage();
 
-  const handleProtectedLink = (path: string) => {
-    if (!user) {
-      navigate('/login');
-      return;
-    }
-    navigate(path);
-    onClose();
-  };
+  const getMenuItems = (isAdmin: boolean) => [
+    { path: '/', name: t('home'), icon: FiHome },
+    { path: '/about', name: t('about'), icon: FiInfo },
+    { path: '/courses', name: t('courses'), icon: FiBook },
+    { path: '/practice', name: t('practiceTest'), icon: FiCheckSquare },
+    { path: '/resources', name: t('resources'), icon: FiFolder },
+    { path: '/progress', name: t('progress'), icon: FiTrendingUp },
+    ...(isAdmin
+      ? [
+          { path: '/admin', name: t('adminDashboard'), icon: FiDatabase, adminOnly: true },
+          { path: '/admin/courses', name: t('manageCourses'), icon: FiGrid, adminOnly: true },
+          { path: '/admin/resources', name: t('manageResources'), icon: FiFolder, adminOnly: true },
+        ]
+      : []),
+    { path: '/profile', name: t('profile'), icon: FiUser },
+    { path: '/help', name: t('help'), icon: FiHelpCircle },
+    { path: '/settings', name: t('settings'), icon: FiSettings },
+  ];
 
   const menuItems = getMenuItems(isAdmin || false);
 
-  const sidebarClasses = `fixed top-0 h-full bg-white shadow-lg z-50 transition-all duration-300
+  const sidebarClasses = `fixed top-0 h-full bg-white shadow-lg z-50 transition-all duration-300 group
     ${isOpen ? 'left-0 w-[240px]' : '-left-[240px] lg:left-0 lg:w-[72px]'} lg:hover:w-[240px]`;
 
   return (
@@ -105,14 +75,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               <Link
                 key={item.path}
                 to={item.path}
-                onClick={(e) => {
-                  if (item.protected) {
-                    e.preventDefault();
-                    handleProtectedLink(item.path);
-                  } else {
-                    onClose();
-                  }
-                }}
+                onClick={onClose}
                 className={`flex items-center h-12 overflow-hidden rounded-lg transition-all duration-200 
                   ${isActive 
                     ? 'bg-secondary text-white' 
@@ -138,5 +101,3 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     </div>
   );
 };
-
-export default Sidebar;

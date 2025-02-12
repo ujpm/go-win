@@ -26,7 +26,7 @@
     },
   {
         "id": 6,
-        "question": "What is the meaning of 'akayira'?",
+        "question": "Iki cyapa gisobanura iki?",
          "answer": "akayira” bivuga inzira nyabagendwa ifunganye yagenewe gusa abanyamaguru"
     },
   {
@@ -280,7 +280,7 @@
         "answer": "ibinyabiziga bya police, ibinyabiziga bihinga"
     },
   {
-    "id": 57,
+    "id":57,
     "question":"Gushyira mu muhanda ku buryo budasanzwe ibinyabiziga bikururana birenze bitatu bigomba gutangirwa uruhusa, uretse imashini ihinga iyo zigenda uregendo rutarenze km 25, ibinyabiziga bikururana bitwaye ibyamamaza n’ibindi biteganwa n’iri teka ariko ntitera ny'uburebure bw'ibyo binyabiziga bikururana ntigishobora kurenga ibipimo bikurikira",
     "answer":"m30, m35, m25"
   },
@@ -381,7 +381,7 @@
     },
     {
         "id": 77,
-        "question": "Ubugari bw’imizigo yikorewe n’ipikipiki ifite akanyabiziga ko kuruhande kimwe n’ubwa romoruki ikururwe na bene icyo kinyabiziga ntibushobora kurenza ibipimo bikurikira ku bugari bw’icyo kinyabiziga kidapakiye:",
+        "question": "Ubugari bw’imizigo yikorewe n’ipikipiki ifite akanyabiziga ko rukuhande kimwe n’ubwa romoruki ikururwe na bene icyo kinyabiziga ntibushobora kurenza ibipimo bikurikira ku bugari bw’icyo kinyabiziga kidapakiye:",
         "answer": "m 1.25, cm 30, cm 75"
     },
  {

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiBook, FiAward, FiUsers, FiArrowRight } from 'react-icons/fi';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { FiBook, FiCheckSquare, FiTrendingUp, FiArrowRight, FiAward, FiUsers } from 'react-icons/fi';
 
 export const Home: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen">
       {/* Hero section */}
@@ -18,32 +21,32 @@ export const Home: React.FC = () => {
             <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-shrink-0 lg:pt-8">
               <div className="mt-12 sm:mt-16 lg:mt-4">
                 <span className="inline-flex items-center space-x-2 rounded-full px-4 py-1 text-sm font-medium bg-primary/10 text-primary">
-                  <span>New Feature</span>
+                  <span>{t('newFeature')}</span>
                   <span className="h-4 w-px bg-primary/20" />
-                  <span>Interactive Practice Tests</span>
+                  <span>{t('interactivePracticeTests')}</span>
                 </span>
               </div>
               <h1 className="mt-8 text-4xl font-bold tracking-tight text-accent sm:text-6xl lg:text-5xl xl:text-6xl">
-                Master Your{' '}
-                <span className="gradient-text">Driving Theory</span>{' '}
-                with Confidence
+                {t('masterYour')}{' '}
+                <span className="gradient-text">{t('drivingTheory')}</span>{' '}
+                {t('withConfidence')}
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-xl">
-                Comprehensive learning platform designed to help you ace your driving theory test. Interactive lessons, practice tests, and real-time progress tracking.
+                {t('comprehensiveLearningPlatform')}
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <Link
                   to="/courses"
                   className="relative inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-secondary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary transition-all duration-200"
                 >
-                  Start Learning
+                  {t('startLearning')}
                   <FiArrowRight className="ml-2 h-4 w-4" />
                 </Link>
                 <Link 
                   to="/about"
                   className="relative inline-flex items-center text-sm font-semibold leading-6 text-accent hover:text-accent/80 transition-colors"
                 >
-                  Learn more <FiArrowRight className="ml-2 h-4 w-4" />
+                  {t('learnMore')} <FiArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -64,27 +67,27 @@ export const Home: React.FC = () => {
       <div className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-base font-semibold leading-7 text-secondary">Learn Faster</h2>
+            <h2 className="text-base font-semibold leading-7 text-secondary">{t('learnFaster')}</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-accent sm:text-4xl">
-              Everything you need to pass your test
+              {t('everythingYouNeed')}
             </p>
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mt-24 lg:max-w-none lg:grid-cols-3">
             {[
               {
                 icon: FiBook,
-                title: 'Comprehensive Courses',
-                description: 'Access a wide range of courses covering all aspects of driving theory.'
+                title: t('comprehensiveCourses'),
+                description: t('accessWideRangeOfCourses'),
               },
               {
                 icon: FiAward,
-                title: 'Practice Tests',
-                description: 'Test your knowledge with our extensive collection of practice tests.'
+                title: t('practiceTests'),
+                description: t('testYourKnowledge'),
               },
               {
                 icon: FiUsers,
-                title: 'Progress Tracking',
-                description: 'Monitor your learning progress and identify areas for improvement.'
+                title: t('progressTracking'),
+                description: t('monitorYourLearningProgress'),
               }
             ].map((feature) => (
               <motion.div 

@@ -2,39 +2,183 @@
   "questions": [
     {
       "id": 1,
-      "question": "What does a red traffic light mean?",
+      "question": "What does a triangular road sign with a red border indicate?",
       "options": [
-        "Stop and wait behind the stop line",
-        "Slow down and proceed with caution",
-        "Speed up to clear the intersection",
-        "Turn right if safe"
+        "Warning of a hazard ahead",
+        "Mandatory instruction",
+        "Prohibition",
+        "Information"
       ],
       "correctAnswer": 0,
-      "explanation": "A red traffic light means you must stop and wait behind the stop line until the light turns green."
+      "explanation": "Triangular signs with red borders are warning signs that alert drivers to potential hazards ahead. They require extra attention and possibly a reduction in speed."
     },
     {
       "id": 2,
-      "question": "What is the national speed limit on a single carriageway?",
+      "question": "When approaching a zebra crossing, what must you do if pedestrians are waiting to cross?",
       "options": [
-        "50 mph",
-        "60 mph",
-        "70 mph",
-        "40 mph"
+        "Sound your horn to warn them",
+        "Continue driving if you're going fast",
+        "Stop and allow them to cross",
+        "Flash your lights to let them know you've seen them"
       ],
-      "correctAnswer": 1,
-      "explanation": "The national speed limit on a single carriageway is 60 mph for cars."
+      "correctAnswer": 2,
+      "explanation": "You must stop at a zebra crossing if pedestrians are waiting to cross. This is a legal requirement and ensures pedestrian safety."
     },
     {
       "id": 3,
-      "question": "When should you use your hazard warning lights?",
+      "question": "What is the meaning of a solid white line along the side of the road?",
       "options": [
-        "When parking on double yellow lines",
-        "To warn others of a hazard ahead",
-        "When driving slowly in fast traffic",
-        "All of the above"
+        "Parking is permitted",
+        "Edge of carriageway",
+        "Overtaking is permitted",
+        "Bus lane ahead"
       ],
       "correctAnswer": 1,
-      "explanation": "Hazard warning lights should be used to warn other drivers of a hazard or obstruction ahead."
+      "explanation": "A solid white line along the side of the road marks the edge of the carriageway. It helps drivers identify the road edge, especially in poor visibility."
+    },
+    {
+      "id": 4,
+      "question": "What color are motorway signs?",
+      "options": [
+        "Green with white letters",
+        "Blue with white letters",
+        "White with black letters",
+        "Brown with white letters"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Motorway signs are blue with white letters. This color scheme is consistently used across the motorway network for easy recognition."
+    },
+    {
+      "id": 5,
+      "question": "What should you do when you see a 'STOP' sign?",
+      "options": [
+        "Slow down and proceed if clear",
+        "Stop only if traffic is coming",
+        "Come to a complete stop at the line regardless of traffic",
+        "Sound horn and proceed"
+      ],
+      "correctAnswer": 2,
+      "explanation": "At a STOP sign, you must come to a complete stop at the stop line, regardless of whether there is other traffic. This is a legal requirement."
+    },
+    {
+      "id": 6,
+      "question": "What does a circular sign with a red border mean?",
+      "options": [
+        "Warning",
+        "Information",
+        "Prohibition",
+        "Direction"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Circular signs with red borders indicate prohibitions - things you must not do. They are regulatory signs that must be obeyed."
+    },
+    {
+      "id": 7,
+      "question": "When should you use your hazard warning lights?",
+      "options": [
+        "When double parked",
+        "To warn others of a hazard ahead",
+        "When parallel parking",
+        "When driving slowly in fast traffic"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Hazard warning lights should be used to warn other road users of a hazard or obstruction ahead. They shouldn't be used while driving unless warning others of a hazard."
+    },
+    {
+      "id": 8,
+      "question": "What does a sign showing a red circle with a red diagonal line through it mean?",
+      "options": [
+        "No entry for any traffic",
+        "Road works ahead",
+        "Give way to oncoming traffic",
+        "Speed camera ahead"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A red circle with a diagonal line through it means 'no entry' for all traffic. This is a prohibition sign that must be obeyed."
+    },
+    {
+      "id": 9,
+      "question": "What color are signs giving directions to tourist destinations?",
+      "options": [
+        "Green",
+        "Blue",
+        "Brown",
+        "White"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Tourist destination signs are brown with white lettering. This color scheme is specifically used for tourist attractions and leisure facilities."
+    },
+    {
+      "id": 10,
+      "question": "What shape is a mandatory sign?",
+      "options": [
+        "Triangle",
+        "Circle",
+        "Rectangle",
+        "Octagon"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Mandatory signs are circular. They tell you what you must do and are usually blue with white symbols or text."
+    },
+    {
+      "id": 11,
+      "question": "What does a yellow box junction mean?",
+      "options": [
+        "You can stop if turning right",
+        "You must not enter unless your exit is clear",
+        "Pedestrian crossing ahead",
+        "Bus lane during peak hours"
+      ],
+      "correctAnswer": 1,
+      "explanation": "You must not enter a yellow box junction unless your exit is clear. The only exception is when you're turning right and are prevented from doing so by oncoming traffic or other vehicles waiting to turn right."
+    },
+    {
+      "id": 12,
+      "question": "What does a sign with a red triangle and an exclamation mark mean?",
+      "options": [
+        "Stop ahead",
+        "Other dangers ahead",
+        "Traffic signals ahead",
+        "Roadworks ahead"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A red triangle with an exclamation mark warns of other dangers ahead. It's used when no other specific warning sign is suitable."
+    },
+    {
+      "id": 13,
+      "question": "What color are signs for primary routes?",
+      "options": [
+        "Blue with white letters",
+        "Green with yellow letters",
+        "White with black letters",
+        "Brown with white letters"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Primary route signs are green with yellow lettering and borders. This helps distinguish them from non-primary routes which use white signs with black lettering."
+    },
+    {
+      "id": 14,
+      "question": "What does a blue circular sign with a white arrow mean?",
+      "options": [
+        "One way traffic",
+        "Turn ahead",
+        "Mandatory direction to be followed",
+        "Motorway ahead"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A blue circular sign with a white arrow indicates a mandatory direction that must be followed. It's a regulatory sign that must be obeyed."
+    },
+    {
+      "id": 15,
+      "question": "What does a 'SLOW' marking on the road mean?",
+      "options": [
+        "Reduce speed now",
+        "School ahead",
+        "Speed camera ahead",
+        "Road works ahead"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A 'SLOW' marking on the road means you should reduce your speed now. It's often used to warn of a hazard ahead such as a bend or junction."
     }
   ]
 }

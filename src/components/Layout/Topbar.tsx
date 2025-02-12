@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiLogIn, FiUserPlus, FiLogOut, FiMenu } from 'react-icons/fi';
+import { FiLogIn, FiUserPlus, FiLogOut, FiMenu, FiGlobe, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { useAuth } from '@/hooks/useAuth';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface TopbarProps {
   onMenuClick: () => void;
 }
 
+const languageOptions = [
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'kin', name: 'Kinyarwanda', flag: '🇷🇼' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' }
+] as const;
+
 export const Topbar: React.FC<TopbarProps> = ({ onMenuClick }) => {
   const { user, logout } = useAuth();
+  const { language, setLanguage } = useLanguage();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleLanguageChange = (code: typeof languageOptions[number]['code']) => {
+    setLanguage(code);
+    setIsOpen(false);
+  };
 
   return (
     <div className="fixed top-0 right-0 left-0 h-16 bg-white shadow-sm z-40 lg:left-[72px]">
@@ -28,6 +43,49 @@ export const Topbar: React.FC<TopbarProps> = ({ onMenuClick }) => {
         </div>
         
         <div className="flex items-center space-x-2 sm:space-x-4">
+          <div className="relative group">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100"
+            >
+              <span className="text-xl">
+                {languageOptions.find(opt => opt.code === language)?.flag}
+              </span>
+              <span className="text-sm font-medium text-gray-700">
+                {languageOptions.find(opt => opt.code === language)?.name}
+              </span>
+              {isOpen ? (
+                <FiChevronUp className="w-4 h-4 text-gray-500" />
+              ) : (
+                <FiChevronDown className="w-4 h-4 text-gray-500" />
+              )}
+            </button>
+
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2"
+                >
+                  {languageOptions.map((option) => (
+                    <button
+                      key={option.code}
+                      onClick={() => handleLanguageChange(option.code)}
+                      className={`w-full px-4 py-2 text-left flex items-center gap-3 hover:bg-gray-100 ${
+                        language === option.code ? 'bg-gray-50' : ''
+                      }`}
+                    >
+                      <span className="text-xl">{option.flag}</span>
+                      <span className="text-sm font-medium text-gray-700">{option.name}</span>
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {user ? (
             <>
               <span className="text-accent hidden sm:inline">
