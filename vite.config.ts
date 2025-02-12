@@ -9,6 +9,10 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
+    dedupe: ['react-icons']
+  },
+  optimizeDeps: {
+    include: ['react-icons']
   },
   build: {
     outDir: 'dist',
