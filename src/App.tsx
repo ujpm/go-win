@@ -9,6 +9,7 @@ import { Login } from '@/components/auth/Login';
 import { Register } from '@/components/auth/Register';
 import AdminDashboard from '@/components/admin/AdminDashboard';
 import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
+import Layout from './components/Layout/Layout';
 
 const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user } = useAuth();
@@ -24,8 +25,7 @@ const App: React.FC = () => {
   return (
     <AuthProvider>
       <Router>
-        <div className="min-h-screen bg-gray-100">
-          <Navbar />
+        <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
@@ -55,7 +55,7 @@ const App: React.FC = () => {
               } 
             />
           </Routes>
-        </div>
+        </Layout>
       </Router>
     </AuthProvider>
   );

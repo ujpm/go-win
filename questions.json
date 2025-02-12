@@ -1,0 +1,467 @@
+[
+    {
+        "id": 1,
+        "question": "Ibyapa biburira n’ibyo gutambuka mbere bishyirwa he?",
+        "answer": "Bishyirwa iburyo hakurikijwe icyerekezo abagenzi bireba baganamo."
+    },
+    {
+        "id": 2,
+        "question": "Ni hehe habujijwe guhagararwa umwanya muto n’umunini?",
+        "answer": "a) Ahari icyapa kibibuza; b) Ku murongo ukomeza; c) Mu muhanda hagati; d) Mu ikorosi,ku bitaro; e) Ku mihanda y’ikuzimu; f) Mu Nzira y’abanyamaguru; g) Aho umuhanda ufunganye."
+    },
+     {
+        "id": 3,
+        "question": "By’umwihariko, umuyobozi ntagomba guterwa imbogamizi igihe ayobora n’iki ?",
+         "answer": "- No gukingirizwa bitewe n’umubare w’abagenzi cg n’uko bafashe imyanya,\n- Bitewe n’ibintu bitabonerana bometse ku birahure"
+    },
+   {
+        "id": 4,
+        "question": "Imyaka y’ifatizo kugirango umuntu yemererwe kuyobora  hakurikijwe urwego rw’ibyo ayobora n’iyihe?",
+        "answer": "- 20 ans (C,D,E, na F)\n- 18 ans ( A na B)\n- 15 Velomoteri na 17 ans ahetse\n- 14 ans (inyamaswa zikurura)\n- 12 ans (amatungo)"
+    },
+  {
+        "id": 5,
+         "question": "Umurongo w’umuhondo ucagaguye uciye ku nkomb ya yo’umuhanda, umusezero w’inzira y’abanyamaguru cyangwa w’inkengero y’umuhanda yegutse uvuga ibi?",
+        "answer": "guhagarara umwanya muto birabujijwe ku burebure bw'uwo murongo"
+    },
+  {
+        "id": 6,
+        "question": "What is the meaning of 'akayira'?",
+         "answer": "akayira” bivuga inzira nyabagendwa ifunganye yagenewe gusa abanyamaguru"
+    },
+  {
+      "id":7,
+      "question": "Iyo umuhanda ugabanijemo ibisate bine kandi kuwugendamo bigakorwa mu",
+      "answer": "Ntabwo byuzuye"
+  },
+  {
+        "id": 8,
+        "question": "What does the term 'Public highway' designate?",
+        "answer": "The term \" Public highway\" designates all roads, streets, public places, parking stations, paths, footpaths, bridges, ferries, as a whole, and generally speaking, all ways opened to public traffic by land;"
+    },
+    {
+        "id": 9,
+        "question": "What is the speed limit for a vehicle if the total weight exceeds 3.5 tonnes?",
+        "answer":"bitari munsi ya km 25 ku isaha."
+    },
+   {
+        "id": 10,
+        "question":"Ikinyamitende  itatu gifite moteri n’imitende  ibiri imbere ni ikihe cyiciro?",
+        "answer":"1 2 - 2 1 1 1 - - - (2.3.4.5 .7)"
+    },
+    {
+      "id": 11,
+      "question": "Ikinyamitende ine gifite moteri ni ikihe cyiciro?",
+      "answer":"2 2 - 2 2 2 2 2 2 2 (2.4.5.7)"
+     },
+   {
+      "id": 12,
+      "question": "Imodoka ni ikihe cyiciro?",
+       "answer":"2 2 - 2 2 2 2 2 2 1"
+    },
+  {
+      "id": 13,
+      "question": "Rumoruki zikururwa n’ibinyabiziga bitari imodoka ni ikihe cyiciro?",
+       "answer":"- - 2 2 2 - - - - 1 (7.8)"
+    },
+    {
+      "id":14,
+      "question":"Rumoroki zikururwa n’imodoka ni ikihe cyiciro?",
+      "answer":"2 2 2 2 2 - - 2 2 1 -"
+    },
+    {
+      "id":15,
+      "question":"Ibinyabiziga bikururwa n’inyamaswa ni ikihe cyiciro?",
+       "answer":"- - 2 2 2 - - - - - -"
+     },
+  {
+        "id": 16,
+        "question": "Amatara maremare n’amagufi ashobora gushyirwa mu kirahuri kimwe kimurika imbere y’imodoka?",
+         "answer":"Yego"
+    },
+    {
+        "id": 17,
+        "question": "Iyo imizigo isumba impera y’nyuma y’ikinyabiziga ho metero irenga igice gihera cy’imizigo kigomba kugaragazwa n’iki?",
+        "answer":"a.  Ku manywa : agatambaro gatukura gafite nibura cm 50 z’uruhande\nb. Iyo amataara agomba gucanwaa:Itara ritukura cyangwa akagarurarumuri gatukura"
+    },
+   {
+        "id": 18,
+        "question": "Umurongo w’umweru ukomeje (udacagaguye) n’umurongo wera w’umweru ukurikiza uwuhe?",
+        "answer":"Ukurikiza urushijeho kukwegera."
+    },
+    {
+        "id": 19,
+        "question":"Ni ryari uva mu murongo wari urimo iyo mwagendaga mubangikanye?",
+        "answer":"Ntabwo byuzuye"
+     },
+  {
+      "id": 20,
+      "question":"Iki cyapa gisobanura iki?",
+      "answer":"Umuvuduko w'intambike"
+  },
+    {
+        "id": 21,
+        "question": "Iki cyapa gisobanura iki?",
+        "answer": "Iherezo Ry'inzira Y'abanyamaguru"
+    },
+  {
+      "id":22,
+      "question":"Iki cyapa gisobanura iki?",
+      "answer":"Iherezo ry'umuhanda Wi Byerekezo Bibiri"
+   },
+  {
+        "id": 23,
+        "question": "Iki cyapa gisobanura iki?",
+         "answer": "Isangano rifite ishusho ya T"
+    },
+    {
+      "id": 24,
+      "question":"Iki cyapa gisobanura iki?",
+      "answer":"Inzira y'abanyeshuri"
+   },
+  {
+      "id":25,
+      "question":"Wakora iki ubonye icyi cyapa?",
+      "answer":"Guhagarara gusa igihe ibinyabiziga bikwegereye"
+  },
+    {
+      "id": 26,
+       "question":"Iki cyapa gisobanura iki?",
+      "answer":"Uguhunguka ku mwaro cyangwa ku nkombe cyangwa ahegereye icyome"
+    },
+ {
+        "id": 27,
+        "question": "Iki cyapa gisobanura iki?",
+        "answer": "Hanyurwa na velomoteri gusa"
+    },
+  {
+        "id": 28,
+        "question": "Icyapa gitanga uburenganzira bwo gutambuka mbere igihe ihiye ishusho?",
+        "answer": "Ntabwo byuzuye"
+    },
+    {
+      "id":29,
+      "question":"Iki cyapa gisobanura iki?",
+      "answer":"Ahegereye amasangano y'inzira nyabagendwa n'inzira ya gari ya moshi ibambiye"
+   },
+   {
+        "id": 30,
+        "question": "Iki cyapa gisobanura iki?",
+        "answer": "Umuhanda wubatse nabi"
+    },
+  {
+        "id": 31,
+        "question":"Iki cyapa gisobanura iki?",
+        "answer":"Guhindura icyerekezo ibumoso ugana aho bahagarara"
+   },
+    {
+      "id":32,
+      "question":"Mu bimenyetso bimurika itara ritukura rivuga iki?",
+      "answer":"Hagarara keretse niba gukata ibumoso"
+   },
+    {
+       "id":33,
+        "question":"Mu bimenyetso bimurika itara ry’icyatsi risobanura iki?",
+        "answer":"Kwitegura kugenda"
+     },
+    {
+        "id": 34,
+        "question": "Umurongo ucagaguye wera mu muhanda usobanura iki?",
+        "answer": "Birabujijwe kurenga"
+    },
+  {
+        "id": 35,
+       "question":"Iki cyapa gisobanura iki?",
+       "answer":"Ukugendera mu muhanda ubisikaniwamo"
+  },
+   {
+        "id": 36,
+        "question": "Iki cyapa gisobanura iki?",
+        "answer": "Ahatangirwa serivisi ni muri metero 30."
+    },
+    {
+        "id": 37,
+        "question":"Iki cyapa gisobanura iki?",
+        "answer":"Ahegereye umuhanda unyerera."
+    },
+  {
+        "id": 38,
+        "question":"Iki cyapa gisobanura iki?",
+        "answer":"Imbere hari umuyoboro w'amatungo."
+    },
+  {
+    "id": 39,
+    "question":"Ku binyabiziga cyangwa ibinyabiziga bigenda bigomba kugira:",
+    "answer":"Umuyobozi, Umuherekeza, A na B ni ibisubizo by'ukuri"
+   },
+  {
+    "id":40,
+    "question":"Urufunguzo rw’amaburo anyuranye ni uruhe muri ibi bikurikira?",
+    "answer":"Ntabwo byuzuye"
+    },
+    {
+     "id":41,
+     "question":"Uretse bibonebw’ibinyabiziga bikurikira ntibigomba kurenga metero 11:",
+     "answer":"Ibinyabiziga, ifite imitambiko imwe uhuza impira, Ifite imitambiko ibiri ikurikiranye mu bugari bwayo"
+    },
+  {
+        "id": 42,
+        "question":"Ibinyabiziga bijujuje guhagarara akanya kanini aha hakurikira:",
+        "answer":"Ahatarengeje metero 1 imbere cyangwa inyuma y’ikinyabiziga gihagaze, aho abantu bimenyetso bibuza byabugenewe"
+    },
+  {
+    "id":43,
+    "question":"Ubugari bwa romoruki ikururwe n’ikinyamitende itatu ntibugomba kurenza ibipimo bikurikira:",
+    "answer":"cm75, cm125"
+   },
+   {
+    "id":44,
+    "question":"Icyapa cyerekana umuvuduko ntarengwa ikinyabiziga kitagomba kurenza gishyirwa gusa ku binyabiziga bifite uburemere ntarengwa bukurikira:",
+    "answer":"Burenga toni 1, Burenga toni 2, Burenga toni 24"
+   },
+   {
+        "id": 45,
+        "question": "Ahatari mu nsisro umuvuduko ntarengwa mu isaha na velomoteri ni:",
+        "answer":"km50, km40, km30"
+    },
+  {
+    "id":46,
+    "question":"Umuyobozi ugenda mu muhanda igihe ubugari bwawo budatuma anyuranaho nkomyi ashobora kunyura mu kayira k'abanyamaguru ariko amaze kureba ibi bikurikira:",
+     "answer":"Umuvuduko w'abanyamaguru, Ubugari bw'umuhanda, Umubare w'abanyamaguru"
+    },
+ {
+    "id":47,
+    "question":"Ku byerekeye kwerekana ibinyabiziga n’ukumurika kwabyo ndetse no kwerekana ihindura ry’ibyerekezo byabyo. Birabujijwe gukora andi matara cyangwa utugarurarumuri uretse ibitegetswe ariko ntibireba amatara akurikira:",
+    "answer":"Amatara ndanga, Amatara ari imbere mu modoka, Amatara ndangaburambara"
+   },
+   {
+        "id": 48,
+         "question":"Iyo nta mategeko awugabanya by’umwihariko umuvuduko ntarengwa w’amapikipiki mu isaha ni:",
+         "answer":"Km25, Km70"
+    },
+  {
+    "id":49,
+     "question":"Uburyo bukoreshwa kugirango ikinyabiziga kigende gahoro igihe idakora neza babwita:",
+     "answer":"Feri y'urugendo, Feri yo guhagarara umwanya munini, Feri yo gutabara"
+  },
+  {
+    "id":50,
+     "question":"Nibura ikinyabiziga gitegetswe kugira uduhanagurakirahure tungahe:",
+    "answer":"2, 3, 1"
+    },
+   {
+      "id": 51,
+      "question":"Amatara maremare y’ikinyabiziga agomba kuzimwa mu bihe bikurikira:",
+       "answer":"iyo umuhanda umurikiyebn’abash abareba muri metero 20, iyo ikinyabiziga kigiye kubisikana n’ibindi, iyo ari mu nsisro"
+    },
+ {
+        "id": 52,
+        "question": "Ibinyabiziga ntibishobora kugira amatara arenga abiri y’ubwoko bumwe keretse ayo matara akurikira:",
+        "answer":"Itara ndangamubyimba, Itara ryerekana icyerekezo, Itara ndangaburambare"
+    },
+  {
+    "id":53,
+    "question":"Ubugari bwa romoruki ikururwe n’igare cyangwa velomoteri ntiburenza ibipimo bikurikira:",
+     "answer":"cm25, cm45"
+    },
+  {
+    "id":54,
+     "question":"Ibinyabiziga bikoreshwa nk’itaksi, bitegerereza abantu mu nzira nyabagendwa, bishobora gushyirwaho itara ryerekana ko ikinyabiziga kitakodeshejwe. Iryo tara rishobora kuba iry'ibara:",
+     "answer":"Ntabwo byuzuye"
+    },
+  {
+        "id": 55,
+        "question": "Ku binyabiziga cyangwa ibinyabiziga bikururana igice kirenga ku biziga ntigishobora kurenga ibipimo bikurikira?",
+        "answer": "iby'inyuma: m3, iby'imbere: m2.70"
+    },
+    {
+        "id": 56,
+        "question": "Uretse bibonebw’uruhushya, ubundi birabujijwe gushyira no gukomeza kugendesha imodoka cyangwa romoruki mu nzira nyabagendwa iyo uburemere bw’ibyikorewe burenze uburemere ntarengwa bwemewe n’ikarita iranga ikinyabiziga ariko ibyo ntibikurikizwa ku binyabiziga bikurikira",
+        "answer": "ibinyabiziga bya police, ibinyabiziga bihinga"
+    },
+  {
+    "id": 57,
+    "question":"Gushyira mu muhanda ku buryo budasanzwe ibinyabiziga bikururana birenze bitatu bigomba gutangirwa uruhusa, uretse imashini ihinga iyo zigenda uregendo rutarenze km 25, ibinyabiziga bikururana bitwaye ibyamamaza n’ibindi biteganwa n’iri teka ariko ntitera ny'uburebure bw'ibyo binyabiziga bikururana ntigishobora kurenga ibipimo bikurikira",
+    "answer":"m30, m35, m25"
+  },
+  {
+    "id":58,
+    "question":"Ibinyabiziga bitatu bifite moteri bigomba kugira amatara akurikira",
+     "answer":"amatara abiri ndangambere n'amatara abiri ndanganyuma yerekana ko ikinyabiziga gihagaze"
+  },
+  {
+    "id":59,
+    "question":"Ibyapa bibuza n’ibitegeka bikurikizwa gusa aha hakurikira",
+    "answer":"mu masangano, mu gice cy’inzira nyabagendwa kiri hagati yaho hishinze n’inkomane ikurikiyeko ku ruhande rw’inzira hishinzeho, Ibyo bishyirwaho hakurikijwe intera itandukanye"
+  },
+  {
+        "id": 60,
+        "question": "akurikira",
+        "answer":"ubururu, umweru, umutuku, umutuku, umweru, ubururu, umutuku, umweru n’umukara"
+    },
+   {
+        "id": 61,
+        "question": "Icyapa cyerekana uburebure bw’igice cyatera ibyago cyangwa bw’ahantu amabwiriza y’icyo cyapa agomba gukurikizwa kirangwa n’ubuso n’ibimenyetso bikurikira",
+        "answer": "ubuso ubururu, ikimenyetso umweru, ubuso ubururu, ikimenyetso umweru, ubuso ubururu, ikimenyetso umweru n'umukara"
+    },
+  {
+    "id":62,
+     "question":"Umurongo w’umuhondo ucagaguye uciye ku nkombe yayo y’umuhanda, umusezero w’inzira y’abanyamaguru cyangwa w’inkengero y’umuhanda yegutse uvuga ibi bikurikira",
+     "answer":"guhagarara umwanya muto birabujijwe ku burebure bw’uwo murongo, guhagarara umwanya muto w’umunini birabujijwe ku burebure bw’uwo murongo, aho bahagarara umwanya munini cyangwa muto"
+    },
+  {
+    "id":63,
+     "question":"Ku binyabiziga cyangwa ibinyabiziga bikururana igice kirenga ku biziga ntigishobora kurenga ibipimo bikurikira",
+     "answer":"iby’inyuma m3.40, iby’imbere m2.50"
+    },
+ {
+    "id":64,
+     "question":"Mu migi no ku yindi mihanda y’igihugu igenwa na minisitiri ushinzwe gutwara abantu n’ibintu uburebure ntarengwa kuri buri mitambiko 3 ifungwaho ibiziga bine ni:",
+      "answer":"toni 24, toni 10, toni 16, toni 53"
+  },
+  {
+    "id":65,
+     "question":"Iyo hagati y’uruhande rw’imbere rwa romoruki n’uruhande rw’inyuma rw’ikinyabiziga kiyikurura hari umwanya urenze m 3 ikibizirikanije kigomba kugaragazwa ku buryo bukurikira iyo amatara y'ikinyabiziga agomba gucanwa:",
+      "answer":"agatambaro gatukura gafite nibura cm 50 z’uruhande, itara risa n’icunga rihishije rigaragara mu mbavu igihe ikibizirikanjye kimuritswe"
+    },
+ {
+   "id":66,
+   "question":"Itara ryo guhagarara ry’ibara ritukura rigomba kuba ridahumisha, kandi rigomba kugaragarira mu ntera ikurikira:",
+   "answer":"njoro igihe ijuru rikeye nibura muri m 200, ku manywa igihe cy’umucyo nibura muri m 50, njoro nibura muri m 100 igihe ijuru rikeye"
+  },
+  {
+    "id":67,
+    "question":"Icyapa cyerekana umuvuduko ntarengwa ikinyabiziga kitagomba kurenza gishyirirwa gusa ku binyabiziga bifite uburemere ntarengwa bukurikira:",
+    "answer":"burenga toni 1, burenga toni 2, burenga toni 24"
+    },
+  {
+    "id":68,
+     "question":"Iyo nta mategeko awugabanya by’umwihariko, umuvuduko ntarengwa w’amapikipiki mu isaha ni:",
+    "answer":"km 25, km 70, km 40"
+    },
+   {
+     "id": 69,
+     "question":"Ahatari mu nsisiro umuvuduko ntarengwa wa velomoteri mu isaha ni:",
+     "answer":"km 50, km 40"
+   },
+  {
+     "id": 70,
+    "question":"Iyo nta mategeko awugabanya by’umwihariko umuvuduko ntarengwa ku modoka zifite ibiziga kwiceka kuberako ariko zakozwe ni:",
+    "answer":"km 20 mu isaha, km 40 mu isaha, km 35 mu isaha"
+   },
+  {
+        "id": 71,
+         "question": "Ikinyabiziga kibujijwe guhagarara akanya kanini aha hakurikira :",
+        "answer": "imbere y’ahantu nyabagendwa hinjirwa n’ahasohokerwa n’abantu benshi, mu muhanda aho ugabanyijemo ibisate bigaragazwa n’imirongo icagaguye"
+    },
+  {
+    "id":72,
+     "question":"Iyo kuva bwije kugeza bukeye cyangwa bitewe n’uko ibihe bimeze nk’igihe cy’ibihi cyangwa cy’imvura bitagishoboka kubona neza muri m 200, udutsiko twose tw’abanyamaguru nk’imperezane cyangwa udutsiko tw’abanyeshuri bari ku murongo bayobowe n’umwarimu, iyo bagenda mu muhanda ku isonga hakaba hari abantu barenze umwe bagomba kugaragazwa kuburyo bukurikira:",
+    "answer":"imbere y’itara ry’umuhondo ritwariwe ibumoso, inyuma y’itara ry’umutuku ritwariwe ibumoso n’umuntu uri ku murongo w’inyuma hafi y’umurongo ugabanya umuhanda mo kabiri"
+  },
+  {
+     "id":73,
+     "question":"Imburira zimurika zemerewe gukoreshwa kugirango bamenyeshe umuyobozi ko bagiye kumunyuraho aha hakurikira:",
+     "answer":"mu nsisro cyangwa ahandi hose, ahegereye inyamaswa zikurura, hafi y’amatungo"
+    },
+  {
+    "id":74,
+     "question":"Ibinyabiziga bifite ubugari bufite ibipimo bikurikira bigomba kugira amatara ndangaburambare:",
+     "answer":"metero 3, metero 2 na cm 50, metero 1 na cm 10"
+    },
+  {
+    "id":75,
+    "question":"Ahari hejuru cyane y'ubuso bumurika bw'amatara ndangambere na ndanganyuma ntihashobora kuba aharenze ibipimo bikurikira hejuru y'ubutaka iyo ikinyabiziga kidapakiye:",
+    "answer":"m1 na cm 50, m1 na cm 75, m 1 na cm 80"
+    },
+    {
+        "id": 76,
+        "question": "Buri modoka cyangwa buri romoruki ikururwe n’iyo modoka bishobora kugira itara risa n’icyatsi kibisi bituma umuyobozi yerekana ko yabonye ikimenyetso cy’uwitegura kumunyuraho. Iryo tara rigomba gushyirwa aha hakurikira:",
+        "answer": "hafi y’inguni y’ibumoso bw’ikinyabiziga, inyuma hafi y’impera y’ibumoso bw’ikinyabiziga, inyuma ahegereye inguni y’iburyo"
+    },
+    {
+        "id": 77,
+        "question": "Ubugari bw’imizigo yikorewe n’ipikipiki ifite akanyabiziga ko kuruhande kimwe n’ubwa romoruki ikururwe na bene icyo kinyabiziga ntibushobora kurenza ibipimo bikurikira ku bugari bw’icyo kinyabiziga kidapakiye:",
+        "answer": "m 1.25, cm 30, cm 75"
+    },
+ {
+    "id":78,
+    "question":"Mu gihe telephone yawe ihamagawe utwaye imodoka wakora iki?",
+     "answer":"Kwitaba cyangwa guhagarara ako kanya, Gushyira imodoka iruhande ukayitaba, B na c ni ibisubizo by'ukuri"
+    },
+  {
+      "id":79,
+      "question":"Ni iki wakora mbere y'uko uhindura icyerekezo?",
+      "answer":"gutanga ikimenyetso cy'ukuboko no gukoresha amatara ndangacyerekezo, tegereza neza niba icyapa kikwemerera guhindura icyerekezo"
+   },
+    {
+        "id": 80,
+         "question": "Ni iki wakora mugihe usanze mu bimenyetso bimurika harimo ibara ry'umuhondo:",
+        "answer": "kwitegura guhagarara"
+    },
+  {
+     "id":81,
+     "question":"Iyo bitewe n’imiterere y’ahantu itandukanya icyapa n’ahantu habi muri munsi yo kuburyo bukurikira:",
+    "answer":"kare ifite uburebure bw'ibara ryera, urukiramende rufite umuzege urukura, impande zifite umuzenguruko utukura"
+   },
+  {
+    "id": 82,
+    "question":"Nijoro, amatara yo kubisikana y’ibara ryera cyangwa y’umuhondo agomba, igihe ijuru rikeye kumurika mu muhanda nibura mu ntera ikurikira:",
+    "answer":"m100, m50, m40"
+  },
+  {
+    "id":83,
+    "question":"Ikinyitso cyose cyatuma hahindurwa ibyanditswe bireba nyirikarita cyangwa ibiranga ikinyabiziga kigomba kumenyeshwa ibiro by'umusoro haba mu magambo cyangwa mu ibaruwa ishinganye ibyo bikorwa mu gihe kingana gute:",
+    "answer":"mu kwezi 2, mu minsi kumwe, mu minsi cumi n'itanu"
+    },
+{
+    "id":84,
+    "question":"Kugirango berekanwe ahantu hagati, hakoreshwa icy’itara ry’umuhondo rimyasa, rivuga uburenganzira icyo kimenyetso barushijeho kwitonda. Ese icyo kimenyetso gihindura iki mu mategeko agenga gutambuka mbere:",
+     "answer":"ntacyo gihindura, abatwaye ibinyabiziga birini ntibagomba, abatwaye ibinyabiziga birini ntibagomba batambuke mbere"
+  },
+  {
+     "id":85,
+    "question":"Romoruki zifite ubugari ntarengwa bwa sentimetero 80 zishobora gushyirwaho akagarurarumuri kamwe gusa iyo zikuruwe n'ibinyabiziga bikurikira:",
+     "answer":"velomoteri, ipikipiki ifite akanyabiziga ku ruhande, igare"
+   },
+   {
+     "id": 86,
+     "question":"Amatara maremare y’ibara ryera cyangwa y’umuhondo agomba nijoro igihe ijuru rikeye kumurika mu ntera ikurikira ku binyabiziga bifite moteri itarengeje ingufu zigera kuri sentimetero kibe 125",
+      "answer":"m100, m75, m25"
+    },
+  {
+     "id":87,
+     "question":"Iyo nta mategeko awugabanya by’umwihariko umuvuduko ntarengwa w’amapikipiki mu isaha ni:",
+      "answer":"km 25, km 70, km 40"
+  },
+  {
+   "id": 88,
+   "question":"bigenda mu nzira nyabagendwa bigaragazwa ku buryo bukurikira:",
+   "answer":"inyuma ni amatara abiri atukura, iyo bigomwe no ku mpera y'amabondo y'ikinyabiziga cyangwa imitwaro ni itara ndangaburumbare risa n'icunga rihishije rigaragara ry'umuhondo"
+   },
+  {
+   "id":89,
+   "question":"Igice cy'umuhanda kiri hakurya y'umurongo mugari wera udacagaguye ugaragaza inkombe mpimbano y’umuhanda kiba kigenewe ibi bikurikira:",
+   "answer":"guhagararwaho umwanya muto gusa, guhagararwaho umwanya muto n’umunini ndetse no kumihanda irondereje y’ibisate byinshi i'imihanda y'imodoka"
+  },
+ {
+     "id": 90,
+     "question":"Muri iri sangano ry’ umuhanda hari icyapa gisobanura “guhagarara” n’ umurongo wera urombereje munzira.Niyihe mpamvu hari iki cyapa cyo “ guhagarara” hano ?",
+      "answer":"Biragoye kubona neza mu muhanda munini, Umuvuduko mu muhanda munini w'avayohe, Ni imwisangano ry'umuhanda rikoreshwa cyane, Hari imirongo iburira ibyago bitunguranye"
+    },
+   {
+    "id":91,
+    "question":"Ni iki gikenewe muri ibi bikurikira kugirango ubashe gutwara imodoka mu muhanda bitenwe n’itegeko? Urhuhushya rwa burundu rwo gutwara ibinyabiziga rugifite agaciro, Ubwishingizi bw’ikinyabiziga bugifite agaciro, icyemezo cy’iyandikwa ry’ikinyabiziga:",
+    "answer":"Uruhushya rwa burundu rwo gutwara ibinyabiziga rugifite agaciro, Ubwishingizi bw’ikinyabiziga bugifite agaciro, icyemezo cy’iyandikwa ry’ikinyabiziga"
+    },
+  {
+    "id": 92,
+    "question":"Ibinyabiziga gishya gikenerwa gusuzumwa bwambere nyuma y'igihe kingana iki?",
+    "answer":"Nyuma y'imyaka itanu, Nyuma y'imyaka ibiri"
+  },
+  {
+   "id": 93,
+   "question":"Ni ryari ushobora kwakiriza imwe amatara yose ndangacyerekezo y’ikinyabiziga gukora?",
+   "answer":"Mu gihe ushaka kuburira abandi bakoresha umuhanda, Mu gihe ikinyabiziga cyawe gishobora guteza ibyago bitunguranye"
+  }
+]
