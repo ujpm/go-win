@@ -1,0 +1,98 @@
+// This is your Prisma schema file
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Course {
+  id               String         @id @default(uuid())
+  title            String
+  description      String
+  thumbnail        String
+  category         String
+  tags             String[]
+  prerequisites    String[]
+  estimatedDuration Int          // in hours
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  createdBy        String
+  creator          User          @relation("CreatedBy", fields: [createdBy], references: [id])
+  modules          Module[]
+  userProgress     UserProgress[]
+}
+
+model Module {
+  id          String    @id @default(uuid())
+  title       String
+  description String
+  difficulty  String    // BEGINNER, INTERMEDIATE, ADVANCED
+  order       Int
+  courseId    String
+  course      Course    @relation(fields: [courseId], references: [id])
+  steps       Step[]
+  userProgress UserProgress[]
+}
+
+model Step {
+  id          String    @id @default(uuid())
+  title       String
+  content     String    @db.Text
+  order       Int
+  duration    Int       // in minutes
+  resources   String[]
+  moduleId    String
+  module      Module    @relation(fields: [moduleId], references: [id])
+  quiz        Quiz?
+  userProgress UserProgress[]
+}
+
+model Quiz {
+  id           String     @id @default(uuid())
+  passingScore Int
+  stepId       String     @unique
+  step         Step       @relation(fields: [stepId], references: [id])
+  questions    Question[]
+}
+
+model Question {
+  id           String   @id @default(uuid())
+  text         String
+  options      String[]
+  correctAnswer Int
+  explanation   String?
+  quizId       String
+  quiz         Quiz     @relation(fields: [quizId], references: [id])
+}
+
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  password      String
+  name          String
+  role          String        // "ADMIN" or "STUDENT"
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  progress      UserProgress[]
+  createdCourses Course[]     @relation("CreatedBy")
+}
+
+model UserProgress {
+  id            String    @id @default(uuid())
+  userId        String
+  courseId      String
+  moduleId      String
+  stepId        String
+  completed     Boolean   @default(false)
+  quizScore     Int?
+  lastAccessed  DateTime  @default(now())
+  user          User      @relation(fields: [userId], references: [id])
+  course        Course    @relation(fields: [courseId], references: [id])
+  module        Module    @relation(fields: [moduleId], references: [id])
+  step          Step      @relation(fields: [stepId], references: [id])
+
+  @@unique([userId, courseId, moduleId, stepId])
+}

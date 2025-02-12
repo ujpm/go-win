@@ -1,0 +1,15 @@
+lms-platform/
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── app.js
+│   ├── config.js
+│   └── package.json
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── README.md
+├── .gitignore
+└── README.md

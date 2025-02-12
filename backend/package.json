@@ -1,0 +1,32 @@
+{
+  "name": "go-win-backend",
+  "version": "1.0.0",
+  "description": "Backend for GO-WIN driving school application",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "test": "jest",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.11",
+    "@types/cors": "^2.8.13",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/mongoose": "^5.11.97",
+    "typescript": "^5.0.4",
+    "ts-node": "^10.9.1",
+    "nodemon": "^2.0.22",
+    "jest": "^29.5.0"
+  }
+}
