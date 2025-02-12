@@ -11,6 +11,11 @@ export const Home: React.FC = () => {
     <div className="min-h-screen">
       {/* Hero section */}
       <div className="relative isolate overflow-hidden">
+        {/* Background gradient */}
+        <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 pointer-events-none">
+          <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#3eabfa] to-[#3552e1] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" />
+        </div>
+
         <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-shrink-0 lg:pt-8">
             <div className="mt-12 sm:mt-16 lg:mt-4">
@@ -42,6 +47,16 @@ export const Home: React.FC = () => {
               >
                 {t('learnMore')} <FiArrowRight className="ml-2 h-4 w-4" />
               </Link>
+            </div>
+          </div>
+
+          <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-1">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl shadow-2xl">
+              <img
+                src="/hero-image.png"
+                alt="App screenshot"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -79,6 +94,7 @@ export const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
+                whileHover={{ y: -5 }}
                 className="relative flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-lg"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/10">

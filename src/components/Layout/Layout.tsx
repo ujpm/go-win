@@ -3,6 +3,7 @@ import { Sidebar } from './Sidebar';
 import { Topbar } from './Topbar';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { FiGlobe } from 'react-icons/fi';
+import { Footer } from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,10 +13,14 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { language, setLanguage } = useLanguage();
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <div className="min-h-screen bg-[#f2f5f8] relative overflow-x-hidden">
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
-      <Topbar onMenuClick={() => setIsSidebarOpen(true)} />
+      <Topbar onMenuClick={toggleSidebar} />
       
       <div className="flex-1">
         <header className="bg-white shadow-sm">
@@ -70,6 +75,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           onClick={() => setIsSidebarOpen(false)}
         />
       )}
+      <Footer />
     </div>
   );
 };

@@ -75,6 +75,14 @@ const translations = {
     testYourKnowledge: 'Test your knowledge with our extensive collection of practice tests.',
     monitorYourLearningProgress: 'Monitor your learning progress and identify areas for improvement.',
     
+    // Footer
+    quickLinks: 'Quick Links',
+    support: 'Support',
+    contact: 'Contact',
+    privacy: 'Privacy Policy',
+    faq: 'FAQ',
+    allRightsReserved: 'All rights reserved.',
+    
     // Common
     save: 'Save',
     cancel: 'Cancel',
@@ -151,6 +159,14 @@ const translations = {
     testYourKnowledge: 'Suzuma ubumenyi bwawe ukoresheje isuzuma ryacu.',
     monitorYourLearningProgress: 'Kurikirana iterambere ryawe kandi umenye aho ugomba kunoza.',
     
+    // Footer
+    quickLinks: 'Aho Ugana Vuba',
+    support: 'Ubufasha',
+    contact: 'Twandikire',
+    privacy: 'Politiki y\'Ibanga',
+    faq: 'Ibibazo Bikunze Kubazwa',
+    allRightsReserved: 'Uburenganzira bwose burafitwe.',
+    
     // Common
     save: 'Bika',
     cancel: 'Reka',
@@ -226,6 +242,14 @@ const translations = {
     accessWideRangeOfCourses: 'Accédez à une large gamme de cours couvrant tous les aspects du code de la route.',
     testYourKnowledge: 'Testez vos connaissances avec notre collection complète de tests.',
     monitorYourLearningProgress: 'Suivez vos progrès d\'apprentissage et identifiez les domaines à améliorer.',
+    
+    // Footer
+    quickLinks: 'Liens Rapides',
+    support: 'Support',
+    contact: 'Contact',
+    privacy: 'Politique de Confidentialité',
+    faq: 'FAQ',
+    allRightsReserved: 'Tous droits réservés.',
     
     // Common
     save: 'Enregistrer',
