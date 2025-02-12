@@ -2,10 +2,12 @@ import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'en' | 'kin' | 'fr';
 
+type TranslationKeys = keyof typeof translations.en;
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: keyof typeof translations.en) => string;
+  t: (key: TranslationKeys) => string;
 }
 
 const translations = {
@@ -46,6 +48,7 @@ const translations = {
     selectLanguage: 'Select Language',
     next: 'Next',
     previous: 'Previous',
+    loadingQuestions: 'Loading questions...',
     
     // Home Page
     welcomeTitle: 'Welcome to Driving License Test Preparation',
@@ -87,57 +90,41 @@ const translations = {
   kin: {
     // Navigation
     home: 'Ahabanza',
-    about: 'Abo turibo',
+    about: 'Ibyerekeye',
     courses: 'Amasomo',
-    practiceTest: 'Isuzuma bumenyi',
+    practiceTest: 'Isuzuma',
     resources: 'Ibikoresho',
     progress: 'Iterambere',
     profile: 'Umwirondoro',
     adminDashboard: 'Ubuyobozi',
-    manageCourses: 'Gucunga amasomo',
-    manageResources: 'Gucunga ibikoresho',
+    manageCourses: 'Gucunga Amasomo',
+    manageResources: 'Gucunga Ibikoresho',
     help: 'Ubufasha',
     settings: 'Igenamiterere',
     
     // Auth
-    login: 'Kwinjira',
-    register: 'Kwiyandikisha',
-    logout: 'Gusohoka',
-    email: 'Imeyili',
+    login: 'Injira',
+    register: 'Iyandikishe',
+    logout: 'Sohoka',
+    email: 'Imeri',
     password: 'Ijambo ryibanga',
     confirmPassword: 'Emeza ijambo ryibanga',
     forgotPassword: 'Wibagiwe ijambo ryibanga?',
-    createAccount: 'Kora konti',
+    createAccount: 'Fungura konti',
     alreadyHaveAccount: 'Usanzwe ufite konti?',
     dontHaveAccount: 'Nta konti ufite?',
     
     // Practice Test
     page: 'Ipaji',
     of: 'kuri',
-    submit: 'Ohereza ibisubizo',
-    retake: 'Subiramo isuzuma',
+    submit: 'Ohereza',
+    retake: 'Subiramo',
     testComplete: 'Isuzuma ryarangiye!',
-    correctAnswers: 'Wakoze neza ibibazo',
+    correctAnswers: 'Ibisubizo byiza',
     selectLanguage: 'Hitamo ururimi',
     next: 'Komeza',
     previous: 'Gusubira inyuma',
-    
-    // Courses
-    myCourses: 'Amasomo yanjye',
-    allCourses: 'Amasomo yose',
-    startCourse: 'Tangira isomo',
-    continueCourse: 'Komeza isomo',
-    courseProgress: 'Iterambere ryisomo',
-    lessonProgress: 'Iterambere ryisomo',
-    completed: 'Byarangiye',
-    
-    // Admin
-    users: 'Abakoresha',
-    analytics: 'Imibare',
-    reports: 'Raporo',
-    addCourse: 'Ongeramo isomo',
-    editCourse: 'Hindura isomo',
-    deleteCourse: 'Siba isomo',
+    loadingQuestions: 'Gutegura ibibazo...',
     
     // Home Page
     welcomeTitle: 'Murakaza neza mu isuzuma ryo gutwara ibinyabiziga',
@@ -163,17 +150,29 @@ const translations = {
     accessWideRangeOfCourses: 'Amasomo menshi akubiyemo ibice byose by\'amategeko y\'umuhanda.',
     testYourKnowledge: 'Suzuma ubumenyi bwawe ukoresheje isuzuma ryacu.',
     monitorYourLearningProgress: 'Kurikirana iterambere ryawe kandi umenye aho ugomba kunoza.',
+    
+    // Common
+    save: 'Bika',
+    cancel: 'Reka',
+    delete: 'Siba',
+    edit: 'Hindura',
+    search: 'Shakisha',
+    welcome: 'Murakaza neza',
+    loading: 'Birimo gutegurwa...',
+    error: 'Hari ikintu kitagenze neza',
+    success: 'Byagenze neza',
+    confirm: 'Emeza'
   },
   fr: {
     // Navigation
     home: 'Accueil',
     about: 'À propos',
     courses: 'Cours',
-    practiceTest: 'Test de pratique',
+    practiceTest: 'Test pratique',
     resources: 'Ressources',
     progress: 'Progrès',
     profile: 'Profil',
-    adminDashboard: 'Tableau de bord',
+    adminDashboard: 'Tableau de bord admin',
     manageCourses: 'Gérer les cours',
     manageResources: 'Gérer les ressources',
     help: 'Aide',
@@ -186,38 +185,22 @@ const translations = {
     email: 'Email',
     password: 'Mot de passe',
     confirmPassword: 'Confirmer le mot de passe',
-    forgotPassword: 'Mot de passe oublié?',
+    forgotPassword: 'Mot de passe oublié ?',
     createAccount: 'Créer un compte',
-    alreadyHaveAccount: 'Vous avez déjà un compte?',
-    dontHaveAccount: 'Vous n\'avez pas de compte?',
+    alreadyHaveAccount: 'Vous avez déjà un compte ?',
+    dontHaveAccount: 'Vous n\'avez pas de compte ?',
     
     // Practice Test
     page: 'Page',
     of: 'sur',
     submit: 'Soumettre',
     retake: 'Reprendre',
-    testComplete: 'Test terminé!',
-    correctAnswers: 'Bonnes réponses',
-    selectLanguage: 'Choisir la langue',
+    testComplete: 'Test terminé !',
+    correctAnswers: 'Réponses correctes',
+    selectLanguage: 'Sélectionner la langue',
     next: 'Suivant',
     previous: 'Précédent',
-    
-    // Courses
-    myCourses: 'Mes cours',
-    allCourses: 'Tous les cours',
-    startCourse: 'Commencer le cours',
-    continueCourse: 'Continuer le cours',
-    courseProgress: 'Progrès du cours',
-    lessonProgress: 'Progrès de la leçon',
-    completed: 'Terminé',
-    
-    // Admin
-    users: 'Utilisateurs',
-    analytics: 'Analytiques',
-    reports: 'Rapports',
-    addCourse: 'Ajouter un cours',
-    editCourse: 'Modifier le cours',
-    deleteCourse: 'Supprimer le cours',
+    loadingQuestions: 'Chargement des questions...',
     
     // Home Page
     welcomeTitle: 'Bienvenue à la préparation du permis de conduire',
@@ -243,8 +226,20 @@ const translations = {
     accessWideRangeOfCourses: 'Accédez à une large gamme de cours couvrant tous les aspects du code de la route.',
     testYourKnowledge: 'Testez vos connaissances avec notre collection complète de tests.',
     monitorYourLearningProgress: 'Suivez vos progrès d\'apprentissage et identifiez les domaines à améliorer.',
+    
+    // Common
+    save: 'Enregistrer',
+    cancel: 'Annuler',
+    delete: 'Supprimer',
+    edit: 'Modifier',
+    search: 'Rechercher',
+    welcome: 'Bienvenue',
+    loading: 'Chargement...',
+    error: 'Une erreur est survenue',
+    success: 'Opération réussie',
+    confirm: 'Confirmer'
   }
-};
+} as const;
 
 const LanguageContext = createContext<LanguageContextType>({
   language: 'en',
@@ -255,7 +250,7 @@ const LanguageContext = createContext<LanguageContextType>({
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>('en');
 
-  const t = (key: keyof typeof translations.en): string => {
+  const t = (key: TranslationKeys): string => {
     return translations[language][key] || key;
   };
 

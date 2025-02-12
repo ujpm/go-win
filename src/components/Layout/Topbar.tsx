@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiLogIn, FiUserPlus, FiLogOut, FiMenu, FiGlobe, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { FiLogIn, FiUserPlus, FiLogOut, FiMenu, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { useAuth } from '@/hooks/useAuth';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
